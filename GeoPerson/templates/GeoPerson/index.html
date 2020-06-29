@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+{#    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+{#    <link rel="stylesheet" href="../../static/assets/fonts/font-awesome.min.css">     #}
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">GeoPersons</a><button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <section class="bg-primary text-white mb-0 text-center">
+        <img class="img-fluid d-block mx-auto mb-5" src="{% static 'assets/img/profile.png' %}" alt="Person's picture">
+        <div class="container">
+            <h5 id="username">მე ვარ:</h5>
+            <br>
+            <h3 id="username">{{ first_name_ge }} {{ last_name_ge }}</h3>
+            <h3 id="username_eng">{{first_name_eng }} {{ last_name_eng }}</h3>
+            <hr class="star-light">
+            <h5 id="email">ჩემი ელფოსტა:</h5>
+            <h3 type="mail">  {{ email}} </h3>
+            <hr class="star-light">
+            <h5 id="dob">მე დავიბადე:</h5>
+            <h3 >{{ date_of_birth }}</h3>
+            <hr class="star-light">
+            <h5 id="password">ჩემი პაროლია:</h5>
+            <h3>{{ password }}</h3>
+            <hr class="star-light">
+        </div>
+    </section>
+    <section id="about" class="bg-primary text-white mb-0">
+        <div class="container">
+            <h2 class="text-uppercase text-center text-white">About</h2>
+            <hr class="star-light mb-5">
+            <div class="row">
+                <div class="col-md-12 ml-auto">
+                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+            </div>
+            <div class="text-center mt-4"></div>
+        </div>
+    </section>
+    <footer class="footer text-center">
+       <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p>2215 John Daniel Drive<br>Clark, MO 65243</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase">Around the Web</h4>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-dribbble fa-fw"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <p class="lead mb-0"><span>Freelance is a free to use, open source Bootstrap theme.&nbsp;</span></p>
+                </div>
+            </div>
+        </div>
+       </section>
+    </footer>
+
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'assets/js/freelancer.js' %}"></script>
+</body>
+
+</html>

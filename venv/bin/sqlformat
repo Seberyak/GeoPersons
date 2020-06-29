@@ -1,4 +1,4 @@
-#!/home/valera/Django/GeoPerson/venv/bin/python
+#!/home/valera/Django/GeoPersons/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
