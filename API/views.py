@@ -129,8 +129,7 @@ def create_person(params = dict() ):
 
 def index(request):
     response_data = dict()
-    response_data['results'] = list()
-    response_data = create_person(request.GET)
+    response_data['results'] = create_person(request.GET)
 
     json_str = json.dumps(response_data, ensure_ascii=False).encode('utf8')
 

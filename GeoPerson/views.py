@@ -11,7 +11,9 @@ def index(request):
         "last_name_eng": p['last_name'][1][0].upper()+p['last_name'][1][1:],
         "email": p['email'],
         "date_of_birth": p['date_of_birth'],
-        "password": p['password']
+        "password": p['password'],
+        "url": "http://geopersons.herokuapp.com/api/"
+
     }
     print(p)
     return render(request, 'GeoPerson/index.html', person)

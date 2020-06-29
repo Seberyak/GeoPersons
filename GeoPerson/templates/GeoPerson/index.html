@@ -1,66 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
-{#    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">#}
+    <title>Geo Persons</title>
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-{#    <link rel="stylesheet" href="../../static/assets/fonts/font-awesome.min.css">     #}
     <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">GeoPersons</a><button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase navbar-shrink" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Geo Persons</a><button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">How to use</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <br>
-    <section class="bg-primary text-white mb-0 text-center">
-        <img class="img-fluid d-block mx-auto mb-5" src="{% static 'assets/img/profile.png' %}" alt="Person's picture">
-        <div class="container">
-            <h5 id="username">მე ვარ:</h5>
+    <header class="masthead bg-primary text-white text-center "  style="word-wrap: break-word;">
+        <div class="container "><img class="img-fluid d-block mx-auto mb-5" src="{% static 'assets/img/profile.png' %}">
+            <h5 id="username" class="font-weight-light"  >მე ვარ:</h5>
+            <h3 id="username" class="font-weight-light">{{ first_name_ge }} {{ last_name_ge }}</h3>
             <br>
-            <h3 id="username">{{ first_name_ge }} {{ last_name_ge }}</h3>
-            <h3 id="username_eng">{{first_name_eng }} {{ last_name_eng }}</h3>
+            <h3 id="username" class="font-weight-light"> {{ first_name_eng }} {{ last_name_eng }}</h3>
             <hr class="star-light">
-            <h5 id="email">ჩემი ელფოსტა:</h5>
-            <h3 type="mail">  {{ email}} </h3>
-            <hr class="star-light">
-            <h5 id="dob">მე დავიბადე:</h5>
-            <h3 >{{ date_of_birth }}</h3>
-            <hr class="star-light">
-            <h5 id="password">ჩემი პაროლია:</h5>
-            <h3>{{ password }}</h3>
-            <hr class="star-light">
+            <h5 id="username" class="font-weight-light">ჩემი ელფოსტა:</h5>
+            <h3 class="font-weight-light ">{{ email}}</h3>
         </div>
-    </section>
-    <section id="about" class="bg-primary text-white mb-0">
-        <div class="container">
-            <h2 class="text-uppercase text-center text-white">About</h2>
-            <hr class="star-light mb-5">
+        <hr class="star-light">
+        <h5 class="font-weight-light ">მე დავიბადე:</h5>
+        <h3 class="font-weight-light ">{{ date_of_birth }}</h3>
+        <hr class="star-light">
+        <h5 class="font-weight-light">ჩემი პაროლია:</h5>
+        <h3 class="font-weight-light">{{ password }}</h3>
+        <br>
+        <hr>
+        <div class="container bg-primary text-white text-center">
+            <h2 id="about" class="text-uppercase text-center text-white" >How to use</h2>
+            <br>
             <div class="row">
-                <div class="col-md-12 ml-auto">
-                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                <div class="col-sm" style="font-family: 'DM Mono', monospace;">
+                    <p  class="lead" >    This is simple Api for Georgian Developers </p>
+                    <br>
+                    <p class="lead" >URL: {{ url }}</p>
+                    <br>
+                    <p  style="" class="lead">You can also set some parameters: </p>
+
                 </div>
             </div>
-            <div class="text-center mt-4"></div>
+
         </div>
-    </section>
-    <footer class="footer text-center">
-       <section id="contact">
+    </header>
+
+    <footer id="contact" class="footer text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-5 mb-lg-0">
@@ -77,19 +74,18 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <h4 class="text-uppercase mb-4">How to Use Freelancer</h4>
                     <p class="lead mb-0"><span>Freelance is a free to use, open source Bootstrap theme.&nbsp;</span></p>
                 </div>
             </div>
         </div>
-       </section>
     </footer>
 
-
+{
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="{% static 'assets/js/freelancer.js' %}"></script>
-</body>
+    <script src="{%  static 'assets/js/freelancer.js' %}"></script>
 
-</html>
+
+</body></html>
