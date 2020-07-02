@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django
-# import django_heroku
+import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -135,4 +134,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
