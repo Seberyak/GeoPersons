@@ -91,14 +91,17 @@ def get_pass(user):
     return str(password)
 
 
-def create_person(params = dict() ):
+def create_person(params=dict()):
     count = 1
     if 'results' in params.keys():
         try:
-            count = int(params['results']) if int(params['results']) <= 5000 else count
+            count = int(params['results'])
         except:
             pass
     info = list()
+
+    if count > 50000:
+        return "Don't do it, i am free hosting server!"
 
     for i in range(count):
         data = dict()
@@ -128,9 +131,14 @@ def create_person(params = dict() ):
 
 
 def index(request):
+    print(request.path)
     response_data = dict()
     response_data['results'] = create_person(request.GET)
 
     json_str = json.dumps(response_data, ensure_ascii=False).encode('utf8')
 
-    return HttpResponse(json_str, content_type='application/json')
+    response = HttpResponse(json_str, content_type='application/json; charset=utf-8')
+    # response.__setitem__("Access-Control-Allow-Origin", "*")
+    # response[''] = '*'
+    # response['Connection'] ='keep-alive'
+    return response

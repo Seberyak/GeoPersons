@@ -12,7 +12,7 @@ def index(request):
         "email": p['email'],
         "date_of_birth": p['date_of_birth'],
         "password": p['password'],
-        "url": "http://geopersons.herokuapp.com/api/"
+        "url": "geopersons.herokuapp.com/api/"
 
     }
     print(p)

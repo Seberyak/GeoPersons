@@ -23,20 +23,20 @@
         </div>
     </nav>
     <header class="masthead bg-primary text-white text-center "  style="word-wrap: break-word;">
-        <div class="container "><img class="img-fluid d-block mx-auto mb-5" src="{% static 'assets/img/profile.png' %}">
-            <h5 id="username" class="font-weight-light"  >მე ვარ:</h5>
+        <div class="container "><img class="img-fluid d-block mx-auto mb-5" src="{% static 'assets/img/user.png' %}">
+            <h5 id="username" class="font-weight-light"  >My name:</h5>
             <h3 id="username" class="font-weight-light">{{ first_name_ge }} {{ last_name_ge }}</h3>
             <br>
             <h3 id="username" class="font-weight-light"> {{ first_name_eng }} {{ last_name_eng }}</h3>
             <hr class="star-light">
-            <h5 id="username" class="font-weight-light">ჩემი ელფოსტა:</h5>
+            <h5 id="username" class="font-weight-light">My email:</h5>
             <h3 class="font-weight-light ">{{ email}}</h3>
         </div>
         <hr class="star-light">
-        <h5 class="font-weight-light ">მე დავიბადე:</h5>
+        <h5 class="font-weight-light ">My birthday:</h5>
         <h3 class="font-weight-light ">{{ date_of_birth }}</h3>
         <hr class="star-light">
-        <h5 class="font-weight-light">ჩემი პაროლია:</h5>
+        <h5 class="font-weight-light">My password:</h5>
         <h3 class="font-weight-light">{{ password }}</h3>
         <br>
         <hr>
@@ -45,11 +45,29 @@
             <br>
             <div class="row">
                 <div class="col-sm" style="font-family: 'DM Mono', monospace;">
-                    <p  class="lead" >    This is simple Api for Georgian Developers </p>
+                    <p  class="lead" >    This is simple api for developers to get random georgian persons </p>
+
+{#                    <br>#}
+                    <p class="lead" >url: <a href="https://{{ url }}" style="color: #fff3cd">{{ url }}</a></p>
+                    <p  class="lead" >    ContentType: Application/Json</p>
+                    <p class="lead"> Request: GET</p>
+                    <p class="lead">You can also set some parameters in your request, for example: </p>
                     <br>
-                    <p class="lead" >URL: {{ url }}</p>
-                    <br>
-                    <p  style="" class="lead">You can also set some parameters: </p>
+                    <div class="row" >
+
+                        <div class="col-sm-6  bg-primary" >
+                        <a  style="color: #ffffff" class="lead" href="https://{{ url }}?results=2">results=2 </a>
+                        <br><br>
+                        <img src="{% static 'assets/img/results=2.png' %}" style="max-width:100%;height:400px;border-radius: 10px">
+
+                        </div>
+                        <div class="col-sm-6 bg-primary" >
+                        <a  style="color: #ffffff" class="lead" href="https://{{ url }}?results=2&age=21">results=2&age=21 </a>
+                        <br><br>
+                        <img src="{% static 'assets/img/age=2.png' %}" style="max-width:100%;height:400px;border-radius: 10px">
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -62,20 +80,25 @@
             <div class="row">
                 <div class="col-md-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Location</h4>
-                    <p>2215 John Daniel Drive<br>Clark, MO 65243</p>
+                    <p>Georgia<br>Tbilisi</p>
                 </div>
                 <div class="col-md-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase">Around the Web</h4>
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="#"><i class="fa fa-dribbble fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="https://www.facebook.com/valerusla"><i class="fa fa-facebook fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="https://github.com/Seberyak"><i class="fa fa-github fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" href="https://www.linkedin.com/in/ValerianLiparteliani"><i class="fa fa-linkedin fa-fw"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">How to Use Freelancer</h4>
-                    <p class="lead mb-0"><span>Freelance is a free to use, open source Bootstrap theme.&nbsp;</span></p>
+                <div class="col-md-4 ">
+                    <h4 class="text-uppercase mb-4">Contact</h4>
+                    <address  >
+                        Author : <a style="font-family: 'DM Mono', monospace; word-wrap: break-word">Valera Liparteliani</a>
+                        <br>
+                        E-mail : <a style="font-family: 'DM Mono', monospace;word-wrap: break-word">liparteliani12.vl@gmail.com</a>
+                        <br>
+                        Phone : <a style="font-family: 'DM Mono', monospace;word-wrap: break-word">+995551112679</a>
+                    </address>
                 </div>
             </div>
         </div>
