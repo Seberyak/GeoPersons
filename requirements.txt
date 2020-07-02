@@ -1,4 +1,4 @@
 django
 gunicorn
 django-heroku
-django-cors-headersCopy
+django-cors-headers
