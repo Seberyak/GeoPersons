@@ -4,6 +4,10 @@ from random import randrange
 import os
 import json
 
+module_dir = os.path.dirname(__file__)
+Gvarebi_path = os.path.join(module_dir, 'static/Gvarebi.txt')
+Saxelebi_path = os.path.join(module_dir, 'static/saxelebi.txt')
+
 Converted = {
     'ა': 'a',
     'ბ': 'b',
@@ -51,19 +55,13 @@ def convert(string):
     return newstring
 
 
-def get_lname():
-    module_dir = os.path.dirname(__file__)
-    file_path = os.path.join(module_dir, 'static/Gvarebi.txt')
-    l_names = open(file_path, 'r').readlines()
-    l_name = l_names[randrange(len(l_names))][:-1]
+def get_lname(Gvarebi):
+    l_name = Gvarebi[randrange(len(Gvarebi))][:-1]
     return l_name
 
 
-def get_name():
-    module_dir = os.path.dirname(__file__)
-    file_path = os.path.join(module_dir, 'static/saxelebi.txt')
-    names = open(file_path, 'r').readlines()
-    name = names[randrange(len(names))][:-2]
+def get_name(Saxelebi):
+    name = Saxelebi[randrange(len(Saxelebi))][:-2]
     return name
 
 
@@ -103,12 +101,15 @@ def create_person(params=dict()):
     if count > 50000:
         return "Don't do it, i am free hosting server!"
 
+    Gvarebi_str = open(Gvarebi_path, 'r').readlines()
+    Saxelebi_str = open(Saxelebi_path, 'r').readlines()
+
     for i in range(count):
         data = dict()
-        data["first_name"] = [get_name()]
+        data["first_name"] = [get_name(Saxelebi_str)]
         data["first_name"].append(convert(data["first_name"][0]))
 
-        data["last_name"] = [get_lname()]
+        data["last_name"] = [get_lname(Gvarebi_str)]
         data["last_name"].append(convert(data["last_name"][0]))
 
         data['email'] = data["first_name"][1] + '.' + data["last_name"][1] + '@example.com'
